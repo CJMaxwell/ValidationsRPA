@@ -1,0 +1,24 @@
+<div class="flex justify-center h-screen mt-40">
+    <div
+        class='flex max-w-md w-full h-64 justify-cente shadow-md rounded-lg overflow-hidden mx-auto flex-col p-5 bg-gray-100'>
+        <section class="flex justify-center">
+            <h3 class="text-2xl font-bold mb-4">RC Validation</h3>
+        </section>
+        <!-- This is the input component -->
+        <form>
+            <div class="relative h-10 input-component empty">
+                <input id="address" type="text" name="address"
+                    class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm" />
+                <label for="address" class="absolute left-2 transition-all bg-white px-1">
+                    Enter RC Number
+                </label>
+            </div>
+            <div class="mt-10">
+                <button type="submit"
+                    class="py-3 bg-blue-500 text-white w-full rounded hover:bg-blue-600 uppercase font-semibold">
+                    Validate
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

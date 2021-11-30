@@ -1,10 +1,13 @@
 <!-- Navbar goes here -->
-<nav class="max-w-6xl mx-auto px-4">
+<nav class="max-w-6xl mx-auto border-b-2 border-yellow-700">
     <section class="flex justify-between items-center">
         <section>
             <!-- Website Logo -->
             <a href="#" class="flex items-center py-4 px-2">
-                <img src="/assets/pwc-logo.png" alt="Logo" class="">
+                <!-- <img src="/assets/PwC_Outline_Logo_Black_RGB.png" alt="Logo" class="h-32"> -->
+                <h1 class="p-3 bg-blue-500 text-white w-full rounded hover:bg-blue-600 uppercase font-semibold">
+                    ValidateNow</h1>
+                <!-- ValidateNow -->
             </a>
         </section>
         <!-- Primary Navbar items -->
@@ -12,7 +15,7 @@
             <!-- <a href="" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Home</a> -->
             <section class="dropdown">
                 <button class="dropbtn flex items-center menu-item">
-                    <a class="py-4 px-2 font-semibold transition duration-300">
+                    <a class="py-4 px-2 font-semibold transition duration-300 uppercase">
                         Services
                     </a>
                     <svg class="fill-current h-4 w-4 font-semibold transition duration-300"
@@ -23,9 +26,9 @@
                 <div class="dropdown-content px-80 h-2/5">
                     <ul class="flex items-center space-x-10">
                         <li class="py-20 cursor-pointer menu-item">
-                            <a>RC Validation</a>
+                            <a [routerLink]="['/rc-validation']">RC Validation</a>
                         </li>
-                        <li class="py-20 cursor-pointer menu-item">
+                        <li class=" py-20 cursor-pointer menu-item">
                             <a>TIN Validation</a>
                         </li>
                         <li class="py-20 cursor-pointer menu-item">
@@ -34,7 +37,7 @@
                     </ul>
                 </div>
             </section>
-            <a href="" class="py-4 px-2 font-semibold transition duration-300 menu-item">
+            <a href="" class="py-4 px-2 font-semibold transition duration-300 menu-item uppercase">
                 About Us
             </a>
 
