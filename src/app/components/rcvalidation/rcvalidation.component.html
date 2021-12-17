@@ -2,26 +2,99 @@
     <section class=""
         style="background-image: url(./assets/img/login.png); background-size: 100%; background-repeat: no-repeat;">
         <section class="flex justify-center items-center h-screen">
-            <section
-                class='flex max-w-md w-full h-64 justify-center shadow-md rounded-lg overflow-hidden mx-auto flex-col p-5 bg-gray-100'>
+            <section *ngIf="mainpage == 1"
+                class='flex max-w-md w-full justify-center shadow-md rounded-lg overflow-hidden mx-auto flex-col p-5 bg-gray-100'>
                 <section class="flex justify-center">
-                    <h3 class="text-2xl font-bold mb-4">RC Validation</h3>
+                    <h3 class="text-2xl font-bold mb-4">Company Validation</h3>
                 </section>
-                <form (ngSubmit)="validateRCNumber()">
-                    <div class="relative h-10 input-component empty">
-                        <input id="address" type="text" name="address"
-                            class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
-                            [(ngModel)]="rcNumber" />
-                        <label for="address" class="absolute left-2 transition-all bg-white px-1">
-                            Enter RC or TIN Number
-                        </label>
+                <form>
+                    <section>
+                        <section class="relative h-10 input-component empty">
+                            <input id="rcNumber" type="text" name="rcNumber" placeholder=" "
+                                class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
+                                [(ngModel)]="rcNumber" />
+                            <label for="rcNumber" class="absolute left-2 transition-all bg-white px-1">
+                                Enter RC or TIN Number
+                            </label>
+                        </section>
+                        <section class="relative h-10 input-component empty mt-4">
+                            <input id="email" type="email" name="name" placeholder=" "
+                                class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
+                                [(ngModel)]="email" />
+                            <label for="email" class="absolute left-2 transition-all bg-white px-1">
+                                Contact Email
+                            </label>
+                        </section>
+                        <div class="mt-10">
+                            <!-- [routerLink]="['/onboarding']" -->
+                            <button type="button" (click)="validateRCNumber()"
+                                class="py-3 bg-blue-500 text-white w-full rounded hover:bg-blue-600 uppercase font-semibold">
+                                Validate
+                            </button>
+                        </div>
+                    </section>
+
+                </form>
+
+
+
+
+                <!-- <form class="mt-12">
+                    <div class="relative">
+                        <input id="email" name="email" type="text"
+                            class="peer h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-rose-600"
+                            placeholder="john@doe.com" />
+                        <label for="email"
+                            class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email
+                            address</label>
                     </div>
-                    <div class="mt-10">
-                        <button type="submit"
-                            class="py-3 bg-blue-500 text-white w-full rounded hover:bg-blue-600 uppercase font-semibold">
-                            Validate
-                        </button>
+                    <div class="mt-10 relative">
+                        <input id="password" type="password" name="password"
+                            class="peer h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-rose-600"
+                            placeholder="Password" />
+                        <label for="password"
+                            class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                     </div>
+
+                    <input type="sumbit" value="Sign in"
+                        class="mt-20 px-4 py-2 rounded bg-rose-500 hover:bg-rose-400 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-500 focus:ring-opacity-80 cursor-pointer" />
+                </form> -->
+
+
+            </section>
+
+            <section *ngIf="mainpage == 2"
+                class='flex max-w-lg w-full justify-center shadow-md rounded-lg overflow-hidden mx-auto flex-col p-5 bg-gray-100'>
+                <section class="flex justify-center">
+                    <h3 class="font-bold mb-4">Welcome {{coyName}}</h3>
+                </section>
+                <form>
+                    <section>
+                        <section class="relative h-10 input-component empty">
+                            <input id="rcNumber" type="text" name="rcNumber" placeholder=" "
+                                class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
+                                [(ngModel)]="rcNumber" />
+                            <label for="rcNumber" class="absolute left-2 transition-all bg-white px-1">
+                                Enter RC or TIN Number
+                            </label>
+                        </section>
+                        <section class="relative h-10 input-component empty mt-4">
+                            <input id="password" type="password" name="password" placeholder=" "
+                                class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
+                                [(ngModel)]="password" />
+                            <label for="passord" class="absolute left-2 transition-all bg-white px-1">
+                                Password
+                            </label>
+                        </section>
+                        <div class="mt-10">
+                            <!-- [routerLink]="['/onboarding']" -->
+                            <button type="button" (click)="validateRCNumber()"
+                                class="py-3 bg-blue-500 text-white w-full rounded hover:bg-blue-600 uppercase font-semibold">
+                                Validate
+                            </button>
+                        </div>
+                    </section>
+
                 </form>
             </section>
         </section>

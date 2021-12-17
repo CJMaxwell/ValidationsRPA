@@ -10,7 +10,7 @@ import { appRoutes } from 'src/appRoutes';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
