@@ -11,6 +11,9 @@ export class RcvalidationComponent implements OnInit {
   password = '';
   email = '';
   coyName = '';
+  accountNumber = '';
+  isChecked = false;
+  accountOption = '';
   data = [
     {
       "Company Email Address": "yemi@logicpointng.com",

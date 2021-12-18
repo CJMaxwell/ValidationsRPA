@@ -1,9 +1,9 @@
 <section>
-    <section class=""
+    <section
         style="background-image: url(./assets/img/login.png); background-size: 100%; background-repeat: no-repeat;">
         <section class="flex justify-center items-center h-screen">
             <section *ngIf="mainpage == 1"
-                class='flex max-w-md w-full justify-center shadow-md rounded-lg overflow-hidden mx-auto flex-col p-5 bg-gray-100'>
+                class='flex max-w-xl w-full justify-center shadow-md rounded-lg overflow-hidden mx-auto flex-col p-5 bg-gray-100'>
                 <section class="flex justify-center">
                     <h3 class="text-2xl font-bold mb-4">Company Validation</h3>
                 </section>
@@ -64,18 +64,63 @@
             </section>
 
             <section *ngIf="mainpage == 2"
-                class='flex max-w-lg w-full justify-center shadow-md rounded-lg overflow-hidden mx-auto flex-col p-5 bg-gray-100'>
+                class='flex max-w-xl w-full justify-center shadow-md rounded-lg overflow-hidden mx-auto flex-col p-5 bg-gray-100'>
                 <section class="flex justify-center">
                     <h3 class="font-bold mb-4">Welcome {{coyName}}</h3>
                 </section>
                 <form>
                     <section>
-                        <section class="relative h-10 input-component empty">
+                        <!-- <section class="relative h-10 input-component empty">
                             <input id="rcNumber" type="text" name="rcNumber" placeholder=" "
                                 class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
                                 [(ngModel)]="rcNumber" />
                             <label for="rcNumber" class="absolute left-2 transition-all bg-white px-1">
                                 Enter RC or TIN Number
+                            </label>
+                        </section> -->
+                        <section class="mt-2">
+                            <span class="text-gray-700 text-sm">Select currency type</span>
+                            <div class="mt-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio" name="accountType" value="naira">
+                                    <span class="ml-2 text-gray-700">Naira</span>
+                                </label>
+                                <label class="inline-flex items-center ml-6">
+                                    <input type="radio" class="form-radio" name="accountType" value="dollar">
+                                    <span class="ml-2 text-gray-700">Dollar</span>
+                                </label>
+                                <label class="inline-flex items-center ml-6">
+                                    <input type="radio" class="form-radio" name="accountType" value="euro">
+                                    <span class="ml-2 text-gray-700">Euro</span>
+                                </label>
+                                <label class="inline-flex items-center ml-6">
+                                    <input type="radio" class="form-radio" name="accountType" value="pounds">
+                                    <span class="ml-2 text-gray-700">Pounds</span>
+                                </label>
+                            </div>
+                        </section>
+                        <section class="mt-2 flex items-center">
+                            <p class="text-gray-700 text-sm mr-2">Do you to autogenerate your account number</p>
+                            <div class="mt-6">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio" [(ngModel)]="accountOption"
+                                        name="accountOption" value="Yes" [checked]="isChecked">
+                                    <span class="ml-2 text-gray-700">Yes</span>
+                                </label>
+                                <label class="inline-flex items-center ml-6">
+                                    <input type="radio" class="form-radio" [(ngModel)]="accountOption"
+                                        name="accountOption" value="No" [checked]="isChecked">
+                                    <span class="ml-2 text-gray-700">No</span>
+                                </label>
+
+                            </div>
+                        </section>
+                        <section *ngIf="accountOption == 'Yes'" class="relative h-10 input-component empty mt-4">
+                            <input id="accountNumber" type="text" name="accountNumber" placeholder=" "
+                                class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
+                                [(ngModel)]="accountNumber" />
+                            <label for="passord" class="absolute left-2 transition-all bg-white px-1">
+                                Enter first 7 digits
                             </label>
                         </section>
                         <section class="relative h-10 input-component empty mt-4">
@@ -86,11 +131,15 @@
                                 Password
                             </label>
                         </section>
-                        <div class="mt-10">
+                        <div class="mt-10 flex justify-between items-center">
                             <!-- [routerLink]="['/onboarding']" -->
-                            <button type="button" (click)="validateRCNumber()"
-                                class="py-3 bg-blue-500 text-white w-full rounded hover:bg-blue-600 uppercase font-semibold">
-                                Validate
+                            <button type="button"
+                                class="py-2 px-8 border border-blue-500 text-blue-500 rounded uppercase font-semibold">
+                                Back
+                            </button>
+                            <button type="button"
+                                class="py-2 px-8 bg-blue-500 text-white rounded hover:bg-blue-600 uppercase font-semibold">
+                                Next
                             </button>
                         </div>
                     </section>
