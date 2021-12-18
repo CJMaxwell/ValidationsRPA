@@ -1,42 +1,73 @@
-<section class="flex justify-center items-center">
+<section class="flex justify-center items-center pt-8">
     <section class="mt-4">
         <h1 class="text-2xl font-bold mb-2">Corporate Account Opening Documents</h1>
         <p>Please upload the following documents to open your open.</p>
     </section>
 </section>
-<section class="mt-2 h-screen bg-white px-2">
-    <section class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
-        <!-- <div class="md:flex">
-            <div class="w-full p-3">
-                <div
-                    class="relative border-dotted h-48 rounded-lg border-dashed border-2 border-blue-500 bg-gray-100 flex justify-center items-center">
-                    <div class="absolute">
-                        <div class="flex flex-col items-center"> <i class="fa fa-folder-open fa-4x text-blue-500"></i>
-                            <span class="block text-gray-400 font-normal">Attach you files here</span>
-                        </div>
-                    </div>
-                    <input type="file" class="h-full w-full opacity-0" name="" />
-                </div>
-            </div>
-        </div> -->
-
-        <section class="flex justify-between">
-            <label class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300" for="user_avatar">
-                Upload file
-            </label>
-            <input type="file" class="w-full text-gray-700 px-3 py-2 border rounded" />
-        </section>
-
-
+<!-- <section class="mt-2 h-screen bg-white px-2">
+    
+</section> -->
+<form class="max-w-xl w-full mx-auto mt-6">
+    <section>
+        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Copy of Certificate of
+            Registration</label>
+        <input
+            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+            aria-describedby="user_avatar_help" id="user_avatar" type="file" />
     </section>
-</section>
-<section>
-    <label class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300" for="user_avatar">Upload
-        file</label>
-    <input
-        class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-900 dark:text-gray-400 focus:outline-none focus:border-transparent text-sm rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-        aria-describedby="user_avatar_help" id="user_avatar" type="file" />
-    <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">A profile picture is useful to
-        confirm your are logged into your account
-    </div>
-</section>
+    <section class="mt-4">
+        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Copy of Board Resolution</label>
+        <input
+            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+            aria-describedby="user_avatar_help" id="user_avatar" type="file" />
+    </section>
+    <section class="mt-4">
+        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Copy of Memorandum and Article of
+            Association</label>
+        <input
+            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+            aria-describedby="user_avatar_help" id="user_avatar" type="file" />
+    </section>
+    <section class="mt-4">
+        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Form C07</label>
+        <input
+            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+            aria-describedby="user_avatar_help" id="user_avatar" type="file" />
+    </section>
+    <section class="mt-4">
+        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Form CAC 1.1</label>
+        <input
+            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+            aria-describedby="user_avatar_help" id="user_avatar" type="file" />
+    </section>
+    <section class="mt-4">
+        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Partnership Agreement</label>
+        <input
+            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+            aria-describedby="user_avatar_help" id="user_avatar" type="file" />
+    </section>
+    <section class="mt-4">
+        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Evidence of Registration with
+            SCUML</label>
+        <input
+            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+            aria-describedby="user_avatar_help" id="user_avatar" type="file" />
+    </section>
+    <section class="mt-4">
+        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Proof of Company Address</label>
+        <input
+            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+            aria-describedby="user_avatar_help" id="user_avatar" type="file" />
+    </section>
+    <!-- <div class="mt-1 text-sm text-gray-500" id="user_avatar_help">
+        A profile picture is useful to confirm your are logged
+        into your account
+    </div> -->
+    <section class="flex justify-center">
+        <button type="button" (click)="submitDocs()"
+            class="py-2 w-full mt-6 bg-blue-500 text-white rounded hover:bg-blue-600 uppercase font-semibold">
+            Submit
+        </button>
+    </section>
+
+</form>

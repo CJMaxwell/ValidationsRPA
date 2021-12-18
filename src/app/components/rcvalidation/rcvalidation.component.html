@@ -133,11 +133,11 @@
                         </section>
                         <div class="mt-10 flex justify-between items-center">
                             <!-- [routerLink]="['/onboarding']" -->
-                            <button type="button"
+                            <button type="button" (click)="mainpage = 1"
                                 class="py-2 px-8 border border-blue-500 text-blue-500 rounded uppercase font-semibold">
                                 Back
                             </button>
-                            <button type="button"
+                            <button type="button" [routerLink]="['/onboarding']"
                                 class="py-2 px-8 bg-blue-500 text-white rounded hover:bg-blue-600 uppercase font-semibold">
                                 Next
                             </button>
