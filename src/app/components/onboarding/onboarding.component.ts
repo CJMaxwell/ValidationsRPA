@@ -26,7 +26,7 @@ export class OnboardingComponent implements OnInit {
   successSwal(msg?: string) {
     swal.fire({
       title: 'Success',
-      // text: msg ? msg : 'Success',
+      text: msg ? msg : 'Documents uploaded successfully.',
       icon: 'success',
       buttonsStyling: true,
       customClass: {
