@@ -7,29 +7,49 @@
                 <section class="flex justify-center">
                     <h3 class="text-2xl font-bold mb-4">Company Validation</h3>
                 </section>
-                <form>
+                <form #reg="ngForm">
                     <section>
                         <section class="relative h-10 input-component empty">
-                            <input id="rcNumber" type="text" name="rcNumber" placeholder="Rc Number"
+                            <input id="rcNumber" required type="text" name="rcNumber" placeholder="Rc Number"
                                 class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
-                                [(ngModel)]="rcNumber" />
+                                [(ngModel)]="rcNumber" #rcNumb="ngModel" />
                             <label for="rcNumber" class="absolute left-2 transition-all bg-white px-1">
                                 Enter RC or TIN Number
+                                <span class="text-red-600">*</span>
                             </label>
                         </section>
+                        <div class="mb-2" *ngIf="rcNumb.invalid && (rcNumb.dirty || rcNumb.touched)">
+                            <div *ngIf="rcNumb.errors?.required" class="text-red-600 text-xs pt-1">
+                                RC Number is required.
+                            </div>
+                        </div>
                         <section class="relative h-10 input-component empty mt-4">
-                            <input id="email" type="email" name="name" placeholder="Contact Email"
+                            <input id="email" required type="email" name="name" placeholder="Contact Email"
                                 class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
-                                [(ngModel)]="email" />
+                                [(ngModel)]="email" #contactEmail="ngModel"
+                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
                             <label for="email" class="absolute left-2 transition-all bg-white px-1">
                                 Contact Email
+                                <span class="text-red-600">*</span>
                             </label>
                         </section>
+                        <div class="mb-2" *ngIf="contactEmail.invalid && (contactEmail.dirty || contactEmail.touched)">
+                            <div *ngIf="contactEmail.errors?.required" class="text-red-600 text-xs pt-1">
+                                RC Number is required.
+                            </div>
+                            <div *ngIf="contactEmail.errors?.pattern" class="text-red-600 text-xs pt-1">
+                                Invalid email
+                            </div>
+                        </div>
                         <div class="mt-10">
                             <!-- [routerLink]="['/onboarding']" -->
-                            <button type="button" (click)="validateRCNumber()"
+                            <button *ngIf="!loading" type="button" (click)="validateRCNumber()"
+                                [disabled]="!reg.form.valid"
                                 class="py-3 bg-blue-500 text-white w-full rounded hover:bg-blue-600 uppercase font-semibold">
                                 Validate
+                            </button>
+                            <button *ngIf="loading" type="button" class="mx-auto border-0 shadow-none block my-4">
+                                <div class="loader-sm"></div>
                             </button>
                         </div>
                     </section>
@@ -89,7 +109,7 @@
 
                             </div>
                         </section>
-                        <section *ngIf="accountOption == 'Yes'" class="relative h-10 input-component empty mt-4">
+                        <section *ngIf="accountOption == 'No'" class="relative h-10 input-component empty mt-4">
                             <input id="accountNumber" type="text" name="accountNumber" placeholder=" "
                                 class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
                                 [(ngModel)]="accountNumber" />

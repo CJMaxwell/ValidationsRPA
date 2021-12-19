@@ -14,6 +14,7 @@ export class RcvalidationComponent implements OnInit {
   accountNumber = '';
   isChecked = false;
   accountOption = '';
+  loading = false;
   data = [
     {
       "Company Email Address": "yemi@logicpointng.com",
@@ -38,18 +39,19 @@ export class RcvalidationComponent implements OnInit {
   }
 
   validateRCNumber() {
+    // this.loading = true;
+    // setTimeout(() => {
+    //   this.loading = false;
+    // }, 1500);
     let payload = this.rcNumber.replace(/\s/g, '');
     console.log(payload, 'RC');
     console.log(this.data[0]["Company Name"])
     this.coyName = this.data[0]["Company Name"];
     this.mainpage = 2;
+
+
     // this.rcvalidationService.getRCValidation(payload).subscribe({
-    //   next: (res) => {
-    //     //@ts-ignore
-    //     if (res.length > 0) {
-    //       console.log(this.data[0]["Company Email Address"], 'hhhhj')
-    //     }
-    //   }
+    //   next: (res) => console.log(res, 'Got it')
     // })
 
   }
