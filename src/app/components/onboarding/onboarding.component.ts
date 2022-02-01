@@ -9,6 +9,14 @@ import swal from 'sweetalert2';
   styleUrls: ['./onboarding.component.css']
 })
 export class OnboardingComponent implements OnInit {
+  cacReg = '';
+  boardRes = '';
+  memorandum = '';
+  formC = '';
+  formCac = '';
+  partnershipAg = '';
+  scuml = '';
+  address = '';
 
   constructor(
     private router: Router

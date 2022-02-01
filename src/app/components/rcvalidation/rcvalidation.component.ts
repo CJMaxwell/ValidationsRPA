@@ -15,18 +15,19 @@ export class RcvalidationComponent implements OnInit {
   isChecked = false;
   accountOption = '';
   loading = false;
-  data = [
-    {
-      "Company Email Address": "yemi@logicpointng.com",
-      "Company JTB TIN": "1052540653",
-      "Company Name": "LOGICPOINT INTEGRATED CONCEPTS LIMITED",
-      "Company Phone Number": "018888185",
-      "Company RC Number": "RC1627059",
-      "Company TIN": "21637569-0001",
-      "Company Tax Office": "MSTO ILUPEJU II",
-      "Status": "VERIFIED"
-    }
-  ];
+  response: any;
+  // data = [
+  //   {
+  //     "Company Email Address": "yemi@logicpointng.com",
+  //     "Company JTB TIN": "1052540653",
+  //     "Company Name": "LOGICPOINT INTEGRATED CONCEPTS LIMITED",
+  //     "Company Phone Number": "018888185",
+  //     "Company RC Number": "RC1627059",
+  //     "Company TIN": "21637569-0001",
+  //     "Company Tax Office": "MSTO ILUPEJU II",
+  //     "Status": "VERIFIED"
+  //   }
+  // ];
 
   public mainpage = 1;
 
@@ -39,20 +40,27 @@ export class RcvalidationComponent implements OnInit {
   }
 
   validateRCNumber() {
-    // this.loading = true;
-    // setTimeout(() => {
-    //   this.loading = false;
-    // }, 1500);
+
     let payload = this.rcNumber.replace(/\s/g, '');
-    console.log(payload, 'RC');
-    console.log(this.data[0]["Company Name"])
-    this.coyName = this.data[0]["Company Name"];
-    this.mainpage = 2;
+
+    this.loading = true;
+
+    this.rcvalidationService.getRCValidation(payload).subscribe({
+      next: (res) => {
+        //@ts-ignore
+        this.response = JSON.parse(res.result);
+        this.coyName = this.response[0]["Company Name"];
+        if (this.coyName) {
+          this.loading = false;
+          this.mainpage = 2;
+
+        } else {
+          this.loading = false;
+        }
 
 
-    // this.rcvalidationService.getRCValidation(payload).subscribe({
-    //   next: (res) => console.log(res, 'Got it')
-    // })
+      }
+    })
 
   }
 

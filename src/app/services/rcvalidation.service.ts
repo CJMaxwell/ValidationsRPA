@@ -13,8 +13,14 @@ export class RcvalidationService {
   ) { }
 
   public getRCValidation(payload: string) {
-    return this.http.get(`${BASE_URL}/tinvalidation/${payload}`, {
-      headers: httpOption
-    })
+    // let url = `${BASE_URL}/tinvalidation/${payload}`;
+    // console.log(url, 'URL Here');
+    // console.log(httpOption, 'headers');
+    let url = `${BASE_URL}?RCNumber=${payload}`;
+    console.log(url, 'hhh');
+    return this.http.get(`${BASE_URL}?RCNumber=${payload}`)
   }
 }
+
+
+// http://13.92.56.119/kycapi/api/KYC/Validate?RCNumber=
