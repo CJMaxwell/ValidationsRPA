@@ -1,90 +1,90 @@
 <section class="flex justify-center items-center pt-8">
-    <section class="mt-4">
-        <h1 class="text-2xl font-bold mb-2">Corporate Account Opening Documents</h1>
-        <p>Please upload the following documents to open your open.</p>
-    </section>
+  <section class="mt-4">
+    <h1 class="text-2xl font-bold mb-2">Corporate Account Opening Documents</h1>
+    <p>Please upload the following documents to open your open.</p>
+  </section>
 </section>
 <!-- <section class="mt-2 h-screen bg-white px-2">
-    
+
 </section> -->
 <form class="max-w-xl w-full mx-auto mt-6 mb-10" #docs="ngForm">
-    <section>
-        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Copy of Certificate of
-            Registration <span class="text-red-600">*</span></label>
-        <input required
-            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
-            aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="cacReg" name="cacReg"
-            #regNo="ngModel" />
-    </section>
-    <section class="mt-4">
-        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Copy of Board Resolution <span
-                class="text-red-600">*</span></label>
-        <input required
-            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
-            aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="boardRes" name="boardRes"
-            #resolution="ngModel" />
-    </section>
-    <section class="mt-4">
-        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Copy of Memorandum and Article of
-            Association <span class="text-red-600">*</span></label>
-        <input required
-            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
-            aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="memorandum" name="memorandum"
-            #memo="ngModel" />
-    </section>
-    <section class="mt-4">
-        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Form C07 <span
-                class="text-red-600">*</span></label>
-        <input required
-            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
-            aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="formC" name="formC"
-            #formc07="ngModel" />
-    </section>
-    <section class="mt-4">
-        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Form CAC 1.1 <span
-                class="text-red-600">*</span></label>
-        <input required
-            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
-            aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="formCac" name="formCac"
-            #formCa="ngModel" />
-    </section>
-    <section class="mt-4">
-        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Partnership Agreement <span
-                class="text-red-600">*</span></label>
-        <input required
-            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
-            aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="partnershipAg"
-            name="partnershipAg" #partnership="ngModel" />
-    </section>
-    <section class="mt-4">
-        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Evidence of Registration with
-            SCUML <span class="text-red-600">*</span></label>
-        <input required
-            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
-            aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="scuml" name="scuml"
-            #scum="ngModel" />
-    </section>
-    <section class="mt-4">
-        <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Proof of Company Address <span
-                class="text-red-600">*</span></label>
-        <input required
-            class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
-            aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="address" name="address"
-            #proof="ngModel" />
-    </section>
-    <!-- <div class="mt-1 text-sm text-gray-500" id="user_avatar_help">
+  <section>
+    <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Copy of Certificate of
+      Registration <span class="text-red-600">*</span></label>
+    <input required
+      class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+      aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="cacReg" name="cacReg"
+      #regNo="ngModel" />
+  </section>
+  <section class="mt-4">
+    <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Copy of Board Resolution <span
+        class="text-red-600">*</span></label>
+    <input required
+      class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+      aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="boardRes" name="boardRes"
+      #resolution="ngModel" />
+  </section>
+  <section class="mt-4">
+    <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Copy of Memorandum and Article of
+      Association <span class="text-red-600">*</span></label>
+    <input required
+      class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+      aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="memorandum" name="memorandum"
+      #memo="ngModel" />
+  </section>
+  <section class="mt-4">
+    <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Form C07 <span
+        class="text-red-600">*</span></label>
+    <input required
+      class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+      aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="formC" name="formC"
+      #formc07="ngModel" />
+  </section>
+  <section class="mt-4">
+    <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Form CAC 1.1 <span
+        class="text-red-600">*</span></label>
+    <input required
+      class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+      aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="formCac" name="formCac"
+      #formCa="ngModel" />
+  </section>
+  <section class="mt-4">
+    <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Partnership Agreement <span
+        class="text-red-600">*</span></label>
+    <input required
+      class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+      aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="partnershipAg" name="partnershipAg"
+      #partnership="ngModel" />
+  </section>
+  <section class="mt-4">
+    <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Evidence of Registration with
+      SCUML <span class="text-red-600">*</span></label>
+    <input required
+      class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+      aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="scuml" name="scuml"
+      #scum="ngModel" />
+  </section>
+  <section class="mt-4">
+    <label class="text-sm font-medium text-gray-700 block mb-2" for="user_avatar">Proof of Company Address <span
+        class="text-red-600">*</span></label>
+    <input required
+      class="block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:border-transparent text-sm"
+      aria-describedby="user_avatar_help" id="user_avatar" type="file" [(ngModel)]="address" name="address"
+      #proof="ngModel" />
+  </section>
+  <!-- <div class="mt-1 text-sm text-gray-500" id="user_avatar_help">
         A profile picture is useful to confirm your are logged
         into your account
     </div> -->
-    <section class="flex justify-center">
-        <button type="button" (click)="submitDocs()"
-            class="py-2 w-full mt-6 bg-blue-500 text-white rounded hover:bg-blue-600 uppercase font-semibold"
-            [disabled]="!docs.form.valid">
-            Submit
-        </button>
-    </section>
-    <section class="flex justify-center items-center mt-4">
-        <a class="text-xs text-blue-500 hover:text-blue-400" [routerLink]="['/']">Upload later</a>
-    </section>
+  <section class="flex justify-center">
+    <button type="button" (click)="submitDocs()"
+      class="py-2 w-full mt-6 bg-blue-500 text-white rounded hover:bg-blue-600 uppercase font-semibold"
+      [disabled]="!docs.form.valid">
+      Submit
+    </button>
+  </section>
+  <section class="flex justify-center items-center mt-4">
+    <a class="text-xs text-blue-500 hover:text-blue-400" [routerLink]="['/dashboard']">Upload later</a>
+  </section>
 
 </form>

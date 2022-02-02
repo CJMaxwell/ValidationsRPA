@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { RcvalidationComponent } from './components/rcvalidation/rcvalidation.component';
-import { appRoutes } from 'src/appRoutes';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { RcvalidationComponent } from './components/rcvalidation/rcvalidation.component';
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { SiderNavComponent } from './components/shared/sider-nav/sider-nav.component';
+import { AppRoutingModule } from 'src/app-routing.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
+import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
+
 
 @NgModule({
   declarations: [
@@ -19,14 +25,18 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     RcvalidationComponent,
     OnboardingComponent,
-    FooterComponent
+    FooterComponent,
+    SiderNavComponent,
+    DashboardComponent,
+    AppLayoutComponent,
+    DashboardLayoutComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

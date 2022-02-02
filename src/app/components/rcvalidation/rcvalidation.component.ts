@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RcvalidationService } from 'src/app/services/rcvalidation.service';
+import { RcvalidationService } from 'src/app/components/services/rcvalidation.service';
 
 @Component({
   selector: 'rpa-rcvalidation',
@@ -45,23 +45,24 @@ export class RcvalidationComponent implements OnInit {
 
     this.loading = true;
 
-    this.rcvalidationService.getRCValidation(payload).subscribe({
-      next: (res) => {
-        //@ts-ignore
-        this.response = JSON.parse(res.result);
-        this.coyName = this.response[0]["Company Name"];
-        if (this.coyName) {
-          this.loading = false;
-          this.mainpage = 2;
+    // this.rcvalidationService.getRCValidation(payload).subscribe({
+    //   next: (res) => {
+    //     //@ts-ignore
+    //     this.response = JSON.parse(res.result);
+    //     this.coyName = this.response[0]["Company Name"];
+    //     if (this.coyName) {
+    //       this.loading = false;
+    //       this.mainpage = 2;
 
-        } else {
-          this.loading = false;
-        }
+    //     } else {
+    //       this.loading = false;
+    //     }
 
 
-      }
-    })
-
+    //   }
+    // })
+    this.coyName = 'Maxwell'
+    this.mainpage = 2;
   }
 
 }
