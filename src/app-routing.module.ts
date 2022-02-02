@@ -11,10 +11,10 @@ export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardComponent,
     children: [{
-      path: '',
+      path: 'dashboard',
       loadChildren: () => import('./app/components/dashboard/dashboard.module').then(m => m.DashboardModule),
     }]
   }

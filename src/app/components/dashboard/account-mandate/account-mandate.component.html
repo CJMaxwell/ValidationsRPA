@@ -1,1 +1,56 @@
-<p>account-mandate works!</p>
+<div class="bg-gray-100 min-h-screen flex flex-col">
+  <div class="container max-w-3xl mt-20 mx-auto flex-1 flex flex-col items-center px-2">
+    <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+
+      <form [formGroup]="accountMadateForm" class="">
+        <table class="w-full" formArrayName="mandates">
+          <tr class="w-full">
+            <th class="w-3/4">
+              Setup Account Mandate(s)
+            </th>
+            <th class="w-1/4">
+              <button type="button" (click)="addMandate()" class="bg-blue-500 text-white px-8 py-3 rounded-md">
+                <i class="fa fa-plus mr-2"></i>Add
+              </button>
+            </th>
+          </tr>
+          <tr class="w-full" *ngFor="let mandate of mandates().controls; let i=index" [formGroupName]="i">
+            <td>
+              <label class="mb-2 inline-block" for="bvn">BVN</label>
+              <!-- <input type="text" formControlName="bvn" class="form-control"> -->
+              <input type="text" formControlName="bvn" class="block border border-grey-light w-full p-3 rounded mb-4"
+                name="bvn" placeholder="Enter BVN" />
+            </td>
+            <td>
+              <button (click)="removeMandate(i)"
+                class="bg-yellow-700 text-white ml-8 px-8 py-3 rounded-md">Remove</button>
+            </td>
+          </tr>
+        </table>
+
+        <!-- <button type="submit" class="btn btn-success">Submit</button> -->
+
+      </form>
+
+
+
+
+      <!-- <h1 class="mb-8 text-3xl text-center">Account Mandate</h1>
+      <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="bvn"
+        placeholder="Enter BVN" /> -->
+
+      <!-- <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="email"
+        placeholder="Email" />
+
+      <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="password"
+        placeholder="Password" />
+      <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="confirm_password"
+        placeholder="Confirm Password" /> -->
+
+      <!-- <button type="submit"
+        class="w-full text-center py-3 rounded bg-blue-500 text-white hover:bg-blue-400 focus:outline-none my-1 uppercase">
+        Validate
+      </button> -->
+    </div>
+  </div>
+</div>
