@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import { generateRandomNumber } from '../services/shared/utils.service';
 
 
 @Component({
@@ -9,6 +10,8 @@ import swal from 'sweetalert2';
   styleUrls: ['./onboarding.component.css']
 })
 export class OnboardingComponent implements OnInit {
+  accountNumber = '';
+
   cacReg = '';
   boardRes = '';
   memorandum = '';
@@ -27,8 +30,17 @@ export class OnboardingComponent implements OnInit {
 
   submitDocs() {
     setTimeout(() => {
+      this.getAccountNumber();
       this.successSwal();
     }, 15);
+  }
+
+  uploadLater() {
+    setTimeout(() => {
+      this.getAccountNumber();
+      this.router.navigate(['/dashboard']);
+    }, 15);
+
   }
 
   successSwal(msg?: string) {
@@ -46,5 +58,10 @@ export class OnboardingComponent implements OnInit {
           this.router.navigate(['/dashboard']);
         });
       })
+  }
+
+  getAccountNumber() {
+    this.accountNumber = `01${generateRandomNumber()}`;
+    localStorage.setItem('accountNumber', this.accountNumber);
   }
 }

@@ -9,8 +9,10 @@
 </div> -->
 
 <div class="bg-white pl-8 rounded-md w-full">
-  <div class="font-bold text-lg my-4">Hi Chanrai Nigeria LTD, your bank account number is <span
-      class="text-yellow-700">0001239087</span></div>
+  <div class="font-bold text-lg my-4">Hi Efo Global Systems Limited, your bank account number is
+    <span *ngIf="nuban" class="text-yellow-700">{{nuban}}</span>
+    <span *ngIf="!nuban" class="text-yellow-700">being generated and will be available shortly.</span>
+  </div>
   <div>
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
       <div class="flex justify-between min-w-full shadow rounded-lg overflow-hidden pb-10">

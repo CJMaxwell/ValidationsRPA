@@ -5,7 +5,7 @@
       <form [formGroup]="accountMadateForm" class="">
         <section class="flex justify-between items-center">
           <section>Account Mandate(s) from Directors </section>
-          <button type="button" (click)="addMandate()" class="bg-blue-500 text-white px-8 py-3 rounded-md">
+          <button type="button" (click)="addMandate()" class="bg-blue-500 text-white px-8 py-3 rounded-md mr-7">
             <i class="fa fa-plus mr-2"></i>Add
           </button>
         </section>
@@ -39,39 +39,39 @@
           </tr>
         </table>
       </form>
-
-      <!-- <form [formGroup]="accountMadateForm" class="">
+      <form [formGroup]="accountMadateNonDirectorsForm" class=" mt-16 pt-16 border-t-2 border-yellow-700">
         <section class="flex justify-between items-center">
           <section>Account Mandate(s) from Non-Directors </section>
-          <button type="button" (click)="addMandate()" class="bg-blue-500 text-white px-8 py-3 rounded-md">
+          <button type="button" (click)="addNonMandate()" class="bg-blue-500 text-white px-8 py-3 rounded-md mr-7">
             <i class="fa fa-plus mr-2"></i>Add
           </button>
         </section>
-        <table class="w-full" formArrayName="mandates">
-          <tr class="w-full" *ngFor="let mandate of mandates().controls; let i=index" [formGroupName]="i">
+        <table class="w-full" formArrayName="nonMandates">
+          <tr class="w-full" *ngFor="let nonMandate of nonMandates().controls; let i=index" [formGroupName]="i">
             <td class="w-1/2">
               <div>
-                <label for="Director" formControlName="director"
-                  class="block text-sm font-medium text-gray-700">Director</label>
-                <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                <label for="bvn" formControlName="bvn" class="block text-sm font-medium text-gray-700">BVN</label>
+                <input type="text" name="bvn" id="bvn" autocomplete="family-name"
                   class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
               </div>
             </td>
             <td>
               <div class="ml-4">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Signature</label>
-                <input type="file" name="last-name" id="last-name" autocomplete="family-name"
+                <label for="signature" class="block text-sm font-medium text-gray-700">Signature</label>
+                <input type="file" name="signature" id="signature" autocomplete="family-name"
                   class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
               </div>
             </td>
             <td>
-              <button (click)="removeMandate(i)" class="bg-yellow-700 text-white ml-8 px-8 py-3 rounded-md mt-3">
+              <button (click)="removeNonMandate(i)" class="bg-yellow-700 text-white ml-8 px-8 py-3 rounded-md mt-3">
                 Remove
               </button>
             </td>
           </tr>
         </table>
-      </form> -->
+      </form>
     </div>
+
+
   </div>
 </div>

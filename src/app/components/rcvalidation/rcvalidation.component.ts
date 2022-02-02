@@ -47,6 +47,7 @@ export class RcvalidationComponent implements OnInit {
 
     // this.rcvalidationService.getRCValidation(payload).subscribe({
     //   next: (res) => {
+    //     console.log(res, 'API response');
     //     //@ts-ignore
     //     this.response = JSON.parse(res.result);
     //     this.coyName = this.response[0]["Company Name"];
@@ -61,7 +62,7 @@ export class RcvalidationComponent implements OnInit {
 
     //   }
     // })
-    this.coyName = 'Maxwell'
+    this.coyName = 'Efo Global Systems Limited'
     this.mainpage = 2;
   }
 
