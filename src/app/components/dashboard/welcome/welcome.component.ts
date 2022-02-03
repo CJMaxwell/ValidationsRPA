@@ -13,8 +13,6 @@ export class WelcomeComponent implements OnInit {
   localAcctInfo: any;
   acctInfo: any;
 
-  accountType = ""; accountCurrency = ""; accountOption = "";
-
 
   constructor() { }
 

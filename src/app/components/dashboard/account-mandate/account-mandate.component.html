@@ -2,76 +2,114 @@
   <div class="container w-full mt-20 mx-auto flex-1 flex flex-col items-center px-2">
     <div class="bg-white px-6 pb-8 rounded shadow-md text-black w-full">
       <h3 class="text-center font-semibold mb-10">Account Mandates</h3>
-      <form [formGroup]="accountMadateForm" class="">
+
+      <form [formGroup]="directorAccountMandateForm">
         <section class="flex justify-between items-center">
           <section>Account Mandate(s) from Directors </section>
-          <button type="button" (click)="addMandate()" class="bg-blue-500 text-white px-8 py-3 rounded-md mr-7">
+          <button type="button" (click)="addDirectorMandate()" class="bg-blue-500 text-white px-8 py-3 rounded-md mr-3">
             <i class="fa fa-plus mr-2"></i>Add
           </button>
         </section>
-        <table class="w-full" formArrayName="mandates">
-          <tr class="w-full" *ngFor="let mandate of mandates().controls; let i=index" [formGroupName]="i">
-            <td class="w-1/2">
+        <table class="w-full" formArrayName="directorMandates">
+          <tr class="w-full" *ngFor="let directorMandate of directorMandates().controls; let i=index"
+            [formGroupName]="i">
+            <td class="w-1/3">
               <div>
-                <label for="Director" formControlName="director"
-                  class="block text-sm font-medium text-gray-700">Director</label>
-                <select id="country" name="country" autocomplete="country-name"
+                <label for="director" class="block text-sm font-medium text-gray-700">Director</label>
+                <select formControlName="director" id="director" name="director" autocomplete="country-name"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                   <option> Select a Director</option>
-                  <option>Enaefewan Friday Okieriemagbaren</option>
+                  <!-- <option>Enaefewan Friday Okieriemagbaren</option>
                   <option>Grace Enaefewan</option>
-                  <option>Oghenebrime Enaefewan</option>
+                  <option>Oghenebrime Enaefewan</option> -->
                 </select>
               </div>
             </td>
             <td>
               <div class="ml-4">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Signature</label>
-                <input type="file" name="last-name" id="last-name" autocomplete="family-name"
+                <label for="directorId" class="block text-sm font-medium text-gray-700">Means Of Identification</label>
+                <input type="file" formControlName="directorId" name="directorId" id="directorId"
                   class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
             </td>
             <td>
-              <button (click)="removeMandate(i)" class="bg-yellow-700 text-white ml-8 px-8 py-3 rounded-md mt-3">
+              <div class="ml-4">
+                <label for="directorSignature" class="block text-sm font-medium text-gray-700">Signature</label>
+                <input type="file" formControlName="directorSignature" name="directorSignature" id="directorSignature"
+                  class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+            </td>
+            <td>
+              <button (click)="removeDirectorMandate(i)"
+                class="bg-yellow-700 text-white ml-8 px-8 py-3 rounded-md mt-3">
                 Remove
               </button>
             </td>
           </tr>
         </table>
       </form>
-      <form [formGroup]="accountMadateNonDirectorsForm" class=" mt-16 pt-16 border-t-2 border-yellow-700">
+
+      <form [formGroup]="nonDirectorsAccountMandateForm" class=" mt-16 pt-16 border-t-2 border-yellow-700">
         <section class="flex justify-between items-center">
           <section>Account Mandate(s) from Non-Directors </section>
-          <button type="button" (click)="addNonMandate()" class="bg-blue-500 text-white px-8 py-3 rounded-md mr-7">
+          <button type="button" (click)="addNonDirectorsMandate()"
+            class="bg-blue-500 text-white px-8 py-3 rounded-md mr-3">
             <i class="fa fa-plus mr-2"></i>Add
           </button>
         </section>
-        <table class="w-full" formArrayName="nonMandates">
-          <tr class="w-full" *ngFor="let nonMandate of nonMandates().controls; let i=index" [formGroupName]="i">
-            <td class="w-1/2">
+        <table class="w-full" formArrayName="nonDirectorsMandates">
+          <tr class="w-full" *ngFor="let nonDirectorsMandate of nonDirectorsMandates().controls; let i=index"
+            [formGroupName]="i">
+            <td class="w-1/3">
               <div>
-                <label for="bvn" formControlName="bvn" class="block text-sm font-medium text-gray-700">BVN</label>
-                <input type="text" name="bvn" id="bvn" autocomplete="family-name"
+                <label for="bvn" class="block text-sm font-medium text-gray-700">BVN</label>
+                <input type="text" formControlName="bvn" name="bvn" id="bvn"
                   class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
               </div>
             </td>
             <td>
               <div class="ml-4">
-                <label for="signature" class="block text-sm font-medium text-gray-700">Signature</label>
-                <input type="file" name="signature" id="signature" autocomplete="family-name"
+                <label for="nonDirectorId" class="block text-sm font-medium text-gray-700">Means of
+                  Identification</label>
+                <input type="file" formControlName="nonDirectorId" name="nonDirectorId" id="nonDirectorId"
                   class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
               </div>
             </td>
             <td>
-              <button (click)="removeNonMandate(i)" class="bg-yellow-700 text-white ml-8 px-8 py-3 rounded-md mt-3">
+              <div class="ml-4">
+                <label for="nonDirectorSignature" class="block text-sm font-medium text-gray-700">Signature</label>
+                <input type="file" formControlName="nonDirectorSignature" name="nonDirectorSignature"
+                  id="nonDirectorSignature"
+                  class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+              </div>
+            </td>
+            <td>
+              <button (click)="removeNonDirectorsMandate(i)"
+                class="bg-yellow-700 text-white ml-8 px-8 py-3 rounded-md mt-3">
                 Remove
               </button>
             </td>
           </tr>
         </table>
       </form>
+
     </div>
+    <section>
+      <button type="button" (click)="close()"
+        class="bg-yellow-700 hover:bg-yellow-900 text-white ml-8 px-8 py-3 rounded-md mt-3">
+        Close
+      </button>
+      <button type="button" (click)="submit()"
+        class="bg-blue-700 hover:bg-blue-500 text-white ml-8 px-8 py-3 rounded-md mt-3">
+        Submit
+      </button>
+    </section>
 
-
+    <!-- <p class="text-gray-700 mt-12 text-base flex items-center justify-center">
+      Proceed to our
+      <a href="https://sterling.ng/business/corporate/" target="_blank" class="text-yellow-700 ml-2">
+        internet banking platform
+      </a>
+    </p> -->
   </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'rpa-account-mandate',
@@ -8,17 +10,17 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 })
 export class AccountMandateComponent implements OnInit {
   accountNumber = 0;
-  accountMadateForm: FormGroup;
-  accountMadateNonDirectorsForm: FormGroup;
+  directorAccountMandateForm: FormGroup;
+  nonDirectorsAccountMandateForm: FormGroup;
 
 
-  constructor(private fb: FormBuilder) {
-    this.accountMadateForm = this.fb.group({
-      mandates: this.fb.array([]),
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.directorAccountMandateForm = this.fb.group({
+      directorMandates: this.fb.array([]),
     });
 
-    this.accountMadateNonDirectorsForm = this.fb.group({
-      nonMandates: this.fb.array([]),
+    this.nonDirectorsAccountMandateForm = this.fb.group({
+      nonDirectorsMandates: this.fb.array([]),
     });
   }
 
@@ -26,41 +28,73 @@ export class AccountMandateComponent implements OnInit {
 
   }
 
-  mandates(): FormArray {
-    return this.accountMadateForm.get("mandates") as FormArray
+  directorMandates(): FormArray {
+    return this.directorAccountMandateForm.get("directorMandates") as FormArray
   }
 
-  newMandate(): FormGroup {
+  newDirectorMandate(): FormGroup {
     return this.fb.group({
-      bvn: '',
+      director: '',
+      directorSignature: null,
+      directorId: null
     })
   }
 
-  addMandate() {
-    this.mandates().push(this.newMandate());
+  addDirectorMandate() {
+    this.directorMandates().push(this.newDirectorMandate());
   }
 
-  removeMandate(i: number) {
-    this.mandates().removeAt(i);
+  removeDirectorMandate(i: number) {
+    this.directorMandates().removeAt(i);
   }
 
+  //---------------NON Directors -----------------//
 
-  nonMandates(): FormArray {
-    return this.accountMadateNonDirectorsForm.get("nonMandates") as FormArray
+  nonDirectorsMandates(): FormArray {
+    return this.nonDirectorsAccountMandateForm.get("nonDirectorsMandates") as FormArray
   }
 
-  newNonMandate(): FormGroup {
+  newNonDirectorsMandate(): FormGroup {
     return this.fb.group({
       bvn: '',
+      nonDirectorSignature: null,
+      nonDirectorId: null
     })
   }
 
-  addNonMandate() {
-    this.mandates().push(this.newMandate());
+  addNonDirectorsMandate() {
+    this.nonDirectorsMandates().push(this.newNonDirectorsMandate());
   }
 
-  removeNonMandate(i: number) {
+  removeNonDirectorsMandate(i: number) {
 
-    this.mandates().removeAt(i);
+    this.nonDirectorsMandates().removeAt(i);
+  }
+
+  close() {
+    this.router.navigate(['/']);
+  }
+
+  submit() {
+    setTimeout(() => {
+      this.successSwal();
+    }, 15);
+  }
+
+  successSwal(msg?: string) {
+    swal.fire({
+      title: 'Success',
+      text: msg ? msg : 'Mandates sent for approval.',
+      icon: 'success',
+      buttonsStyling: true,
+      customClass: {
+        confirmButton: 'btn-success'
+      }
+    })
+      .then((result) => {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/']);
+        });
+      })
   }
 }
