@@ -1,0 +1,150 @@
+<div class="bg-white pl-8 rounded-md w-full">
+  <div>
+    <div class="text-lg m-4 font-bold">
+      New Account Summary
+    </div>
+    <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+      <div class="min-w-full shadow rounded-lg overflow-hidden pb-10">
+        <section>
+          <p class="text-sm font-semibold pt-6 mx-4 mb-4">Account Opening Information</p>
+          <table class="leading-normal">
+            <tbody>
+              <tr>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap font-semibold">Category Of Business</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">{{coy["Entity_Type"]}}</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap font-semibold">Account Type</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    {{acctInfo.accountType}} Account - {{acctInfo.accountCurrency}}
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap font-semibold">Created Date</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm capitalize">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    {{today | date}}
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <p class="text-sm font-semibold mx-4 mt-8">Uploaded Documents</p>
+          <table class="leading-normal">
+            <tbody>
+              <tr>
+                <td class="px-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Copy of Certificate of
+                    Registration</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <i class="fa fa-check text-green-400" aria-hidden="true"></i>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Copy of Certificate of
+                    Registration</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <i class="fa fa-check text-green-400" aria-hidden="true"></i>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Copy of Board Resolution</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <i class="fa fa-check text-green-400" aria-hidden="true"></i>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Copy of Memorandum and Article of
+                    Association</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <i class="fa fa-check text-green-400" aria-hidden="true"></i>
+                  </p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="px-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Form C07</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <i class="fa fa-check text-green-400" aria-hidden="true"></i>
+                  </p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="px-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Form CAC 1.1</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <i class="fa fa-check text-green-400" aria-hidden="true"></i>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Partnership Agreement</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <i class="fa fa-check text-green-400" aria-hidden="true"></i>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Evidence of Registration with
+                    SCUML</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <i class="fa fa-times text-yellow-700" aria-hidden="true"></i>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Proof of Company Address</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <i class="fa fa-check text-green-400" aria-hidden="true"></i>
+                  </p>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>

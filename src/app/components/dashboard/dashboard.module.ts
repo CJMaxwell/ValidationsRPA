@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ReviewComponent } from './review/review.component';
 
 
 
@@ -12,7 +13,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 @NgModule({
   declarations: [
     WelcomeComponent,
-    AccountMandateComponent
+    AccountMandateComponent,
+    ReviewComponent
   ],
   imports: [
     CommonModule,

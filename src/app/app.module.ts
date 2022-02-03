@@ -16,7 +16,6 @@ import { AppRoutingModule } from 'src/app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
-import { ReviewComponent } from './components/review/review.component';
 
 
 @NgModule({
@@ -31,7 +30,6 @@ import { ReviewComponent } from './components/review/review.component';
     DashboardComponent,
     AppLayoutComponent,
     DashboardLayoutComponent,
-    ReviewComponent,
   ],
   imports: [
     BrowserModule,
