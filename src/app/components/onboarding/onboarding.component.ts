@@ -54,9 +54,10 @@ export class OnboardingComponent implements OnInit {
       }
     })
       .then((result) => {
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-          this.router.navigate(['/dashboard']);
-        });
+        this.router.navigate(['/dashboard']);
+
+        // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        // });
       })
   }
 

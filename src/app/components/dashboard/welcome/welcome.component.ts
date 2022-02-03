@@ -12,6 +12,8 @@ export class WelcomeComponent implements OnInit {
   coy: any;
   localAcctInfo: any;
   acctInfo: any;
+  directorsDetail: any
+  directors: any;
 
 
   constructor() { }
@@ -25,6 +27,10 @@ export class WelcomeComponent implements OnInit {
 
     this.localAcctInfo = localStorage.getItem("acctInfo");
     this.acctInfo = JSON.parse(this.localAcctInfo);
+
+    this.directorsDetail = localStorage.getItem("directors");
+    this.directors = JSON.parse(this.directorsDetail);
+
   }
 
 }

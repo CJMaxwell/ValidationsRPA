@@ -12,6 +12,8 @@ export class AccountMandateComponent implements OnInit {
   accountNumber = 0;
   directorAccountMandateForm: FormGroup;
   nonDirectorsAccountMandateForm: FormGroup;
+  directorsDetail: any
+  directors: any;
 
 
   constructor(private fb: FormBuilder, private router: Router) {
@@ -25,7 +27,8 @@ export class AccountMandateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.directorsDetail = localStorage.getItem("directors");
+    this.directors = JSON.parse(this.directorsDetail);
   }
 
   directorMandates(): FormArray {

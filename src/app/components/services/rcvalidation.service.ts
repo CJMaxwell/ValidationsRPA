@@ -16,8 +16,11 @@ export class RcvalidationService {
     // let url = `${BASE_URL}/tinvalidation/${payload}`;
     // console.log(url, 'URL Here');
     // console.log(httpOption, 'headers');
-    let url = `${BASE_URL}?RCNumber=${payload}`;
-    return this.http.get(`${BASE_URL}?RCNumber=${payload}`)
+    return this.http.get(`${BASE_URL}/Validate?RCNumber=${payload}`)
+  }
+
+  public getCoyDirector(coyName: string) {
+    return this.http.get(`${BASE_URL}/getdirectorsfromdb?companyName=${coyName}`)
   }
 }
 

@@ -19,9 +19,7 @@
                 <select formControlName="director" id="director" name="director" autocomplete="country-name"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                   <option> Select a Director</option>
-                  <!-- <option>Enaefewan Friday Okieriemagbaren</option>
-                  <option>Grace Enaefewan</option>
-                  <option>Oghenebrime Enaefewan</option> -->
+                  <option *ngFor="let director of directors">{{director["Value"]}}</option>
                 </select>
               </div>
             </td>

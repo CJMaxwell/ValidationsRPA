@@ -118,7 +118,7 @@
           </table>
         </section>
 
-        <!-- <section class="pr-8">
+        <section *ngIf="directors.length > 0" class="pr-8">
           <p class="text-sm font-semibold m-4">Directors Information</p>
           <table class="leading-normal">
             <thead>
@@ -133,33 +133,17 @@
                 </th>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let director of directors">
                 <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">Enaefewan Friday Okieriemagbaren</p>
+                  <p class="text-gray-900 whitespace-no-wrap">{{director["Value"]}}</p>
                 </td>
                 <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">Director</p>
-                </td>
-              </tr>
-              <tr>
-                <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">Grace Enaefewan</p>
-                </td>
-                <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">Director</p>
-                </td>
-              </tr>
-              <tr>
-                <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">Oghenebrime Enaefewan</p>
-                </td>
-                <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">Director</p>
+                  <p class="text-gray-900 whitespace-no-wrap">{{director["Label"]}}</p>
                 </td>
               </tr>
             </tbody>
           </table>
-        </section> -->
+        </section>
 
 
       </div>

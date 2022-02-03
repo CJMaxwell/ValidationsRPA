@@ -10,7 +10,7 @@ import { HttpHeaders } from "@angular/common/http";
 //   constructor() { }
 // }
 
-export const BASE_URL = 'http://13.92.56.119/kycapi/api/KYC/Validate';
+export const BASE_URL = 'http://13.92.56.119/kycapi/api/kyc';
 export const API_KEY = 'jojo34567866';
 
 export const httpOption = new HttpHeaders({

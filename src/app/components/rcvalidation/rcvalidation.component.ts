@@ -34,6 +34,7 @@ export class RcvalidationComponent implements OnInit {
     accountCurrency: '',
     accountOption: ''
   }
+  directors: any;
 
 
 
@@ -66,6 +67,16 @@ export class RcvalidationComponent implements OnInit {
           localStorage.setItem('coy', JSON.stringify(this.response[0]));
           this.loading = false;
           this.mainpage = 2;
+          this.rcvalidationService.getCoyDirector(this.coyName).subscribe({
+            next: (data) => {
+              //@ts-ignore
+              if (data.code == "200") {
+                //@ts-ignore
+                this.directors = JSON.parse(data.object);
+                localStorage.setItem('directors', JSON.stringify(this.directors));
+              }
+            }
+          });
         }
         else {
           this.loading = false;
