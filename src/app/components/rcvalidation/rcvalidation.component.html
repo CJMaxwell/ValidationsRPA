@@ -61,21 +61,24 @@
         <section class="flex justify-center">
           <h3 class="font-bold mb-4">Welcome {{coyName}}</h3>
         </section>
-        <form>
+        <form #acctForm="ngForm">
           <section>
             <section class="mt-2">
               <span class="text-gray-700 text-sm">Account Type</span>
               <div class="mt-4">
                 <label class="inline-flex items-center">
-                  <input type="radio" class="form-radio" name="accountType" value="naira">
+                  <input type="radio" class="form-radio" [(ngModel)]="acctInfo.accountType" name="accountType"
+                    value="Saving">
                   <span class="ml-2 text-gray-700">Saving</span>
                 </label>
                 <label class="inline-flex items-center ml-6">
-                  <input type="radio" class="form-radio" name="accountType" value="dollar">
+                  <input type="radio" class="form-radio" [(ngModel)]="acctInfo.accountType" name="accountType"
+                    value="Current">
                   <span class="ml-2 text-gray-700">Current</span>
                 </label>
                 <label class="inline-flex items-center ml-6">
-                  <input type="radio" class="form-radio" name="accountType" value="euro">
+                  <input type="radio" class="form-radio" [(ngModel)]="acctInfo.accountType" name="accountType"
+                    value="Investment">
                   <span class="ml-2 text-gray-700">Investment</span>
                 </label>
               </div>
@@ -84,19 +87,23 @@
               <span class="text-gray-700 text-sm">Account currency</span>
               <div class="mt-4">
                 <label class="inline-flex items-center">
-                  <input type="radio" class="form-radio" name="accountCurrency" value="naira">
+                  <input type="radio" class="form-radio" [(ngModel)]="acctInfo.accountCurrency" name="accountCurrency"
+                    value="Naira">
                   <span class="ml-2 text-gray-700">Naira</span>
                 </label>
                 <label class="inline-flex items-center ml-6">
-                  <input type="radio" class="form-radio" name="accountCurrency" value="dollar">
+                  <input type="radio" class="form-radio" [(ngModel)]="acctInfo.accountCurrency" name="accountCurrency"
+                    value="Dollar">
                   <span class="ml-2 text-gray-700">Dollar</span>
                 </label>
                 <label class="inline-flex items-center ml-6">
-                  <input type="radio" class="form-radio" name="accountCurrency" value="euro">
+                  <input type="radio" class="form-radio" [(ngModel)]="acctInfo.accountCurrency" name="accountCurrency"
+                    value="Euro">
                   <span class="ml-2 text-gray-700">Euro</span>
                 </label>
                 <label class="inline-flex items-center ml-6">
-                  <input type="radio" class="form-radio" name="accountCurrency" value="pounds">
+                  <input type="radio" class="form-radio" [(ngModel)]="acctInfo.accountCurrency" name="accountCurrency"
+                    value="Pounds">
                   <span class="ml-2 text-gray-700">Pounds</span>
                 </label>
               </div>
@@ -105,19 +112,19 @@
               <p class="text-gray-700 text-sm mr-2">Autogenerate account number?</p>
               <div class="mt-6">
                 <label class="inline-flex items-center">
-                  <input type="radio" class="form-radio" [(ngModel)]="accountOption" name="accountOption" value="Yes"
-                    [checked]="isChecked">
+                  <input type="radio" class="form-radio" [(ngModel)]="acctInfo.accountOption" name="accountOption"
+                    value="Yes" [checked]="isChecked">
                   <span class="ml-2 text-gray-700">Yes</span>
                 </label>
                 <label class="inline-flex items-center ml-6">
-                  <input type="radio" class="form-radio" [(ngModel)]="accountOption" name="accountOption" value="No"
-                    [checked]="isChecked">
+                  <input type="radio" class="form-radio" [(ngModel)]="acctInfo.accountOption" name="accountOption"
+                    value="No" [checked]="isChecked">
                   <span class="ml-2 text-gray-700">No</span>
                 </label>
 
               </div>
             </section>
-            <section *ngIf="accountOption == 'No'" class="relative h-10 input-component empty mt-4">
+            <section *ngIf="acctInfo.accountOption == 'No'" class="relative h-10 input-component empty mt-4">
               <input id="accountNumber" type="number" max="7" min="7" name="accountNumber" placeholder=" "
                 class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
                 [(ngModel)]="accountNumber" />
@@ -139,7 +146,8 @@
                 class="py-2 px-8 border border-blue-500 text-blue-500 rounded uppercase font-semibold">
                 Back
               </button>
-              <button type="button" [routerLink]="['/onboarding']"
+              <!-- [routerLink]="['/onboarding']" -->
+              <button type="button" (click)="goNext()"
                 class="py-2 px-8 bg-blue-500 text-white rounded hover:bg-blue-600 uppercase font-semibold">
                 Next
               </button>

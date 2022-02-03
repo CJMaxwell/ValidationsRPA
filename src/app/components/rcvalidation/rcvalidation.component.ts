@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RcvalidationService } from 'src/app/components/services/rcvalidation.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class RcvalidationComponent implements OnInit {
   coyName = '';
   accountNumber = '';
   isChecked = false;
-  accountOption = '';
+
   loading = false;
   response: any;
   // data = [
@@ -28,12 +29,21 @@ export class RcvalidationComponent implements OnInit {
   //     "Status": "VERIFIED"
   //   }
   // ];
+  acctInfo = {
+    accountType: '',
+    accountCurrency: '',
+    accountOption: ''
+  }
+
+
 
   public mainpage = 1;
 
 
   constructor(
-    private rcvalidationService: RcvalidationService
+    private rcvalidationService: RcvalidationService,
+    private router: Router
+
   ) { }
 
   ngOnInit(): void {
@@ -45,25 +55,32 @@ export class RcvalidationComponent implements OnInit {
 
     this.loading = true;
 
-    // this.rcvalidationService.getRCValidation(payload).subscribe({
-    //   next: (res) => {
-    //     console.log(res, 'API response');
-    //     //@ts-ignore
-    //     this.response = JSON.parse(res.result);
-    //     this.coyName = this.response[0]["Company Name"];
-    //     if (this.coyName) {
-    //       this.loading = false;
-    //       this.mainpage = 2;
+    this.rcvalidationService.getRCValidation(payload).subscribe({
+      next: (res) => {
+        //@ts-ignore
+        if (res.code == "200") {
+          //@ts-ignore
+          this.response = JSON.parse(res.object);
+          this.coyName = this.response[0]["Company Name"];
+          localStorage.setItem('coyName', this.coyName);
+          localStorage.setItem('coy', JSON.stringify(this.response[0]));
+          this.loading = false;
+          this.mainpage = 2;
+        }
+        else {
+          this.loading = false;
+        }
 
-    //     } else {
-    //       this.loading = false;
-    //     }
+      }
+    })
 
+  }
 
-    //   }
-    // })
-    this.coyName = 'Efo Global Systems Limited'
-    this.mainpage = 2;
+  goNext() {
+    setTimeout(() => {
+      localStorage.setItem('acctInfo', JSON.stringify(this.acctInfo));
+    }, 15)
+    this.router.navigate(['/onboarding']);
   }
 
 }

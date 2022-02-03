@@ -17,7 +17,6 @@ export class RcvalidationService {
     // console.log(url, 'URL Here');
     // console.log(httpOption, 'headers');
     let url = `${BASE_URL}?RCNumber=${payload}`;
-    console.log(url, 'hhh');
     return this.http.get(`${BASE_URL}?RCNumber=${payload}`)
   }
 }

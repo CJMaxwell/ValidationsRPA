@@ -9,10 +9,54 @@
 </div> -->
 
 <div class="bg-white pl-8 rounded-md w-full">
-  <div class="font-bold text-lg my-4">Hi Efo Global Systems Limited, your bank account number is
-    <span *ngIf="nuban" class="text-yellow-700">{{nuban}}</span>
-    <span *ngIf="!nuban" class="text-yellow-700">being generated and will be available shortly.</span>
+  <div>
+    <div class="font-bold text-lg my-4">Hi {{coyName}}, your bank account number is
+      <span *ngIf="nuban" class="text-yellow-700">{{nuban}}</span>
+      <span *ngIf="!nuban" class="text-yellow-700">being generated and will be available shortly.</span>
+    </div>
+    <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+      <div class="flex justify-between min-w-full shadow rounded-lg overflow-hidden pb-10">
+        <section>
+          <p class="text-sm font-semibold m-4">Bank Account Information</p>
+          <table class="leading-normal">
+            <tbody>
+              <tr>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Account Name</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">{{coyName}}</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Account Number</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm capitalize">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    {{nuban}}
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">Account Type</p>
+                </td>
+                <td class="px-5 pt-5 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    {{acctInfo.accountType}} - {{acctInfo.accountCurrency}}
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
   </div>
+  <!-- {{acctInfo | json}} -->
+
+
   <div>
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
       <div class="flex justify-between min-w-full shadow rounded-lg overflow-hidden pb-10">
@@ -25,7 +69,7 @@
                   <p class="text-gray-900 whitespace-no-wrap">Name</p>
                 </td>
                 <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">Chanrai Nigeria Limited</p>
+                  <p class="text-gray-900 whitespace-no-wrap">{{coyName}}</p>
                 </td>
               </tr>
               <tr>
@@ -33,7 +77,8 @@
                   <p class="text-gray-900 whitespace-no-wrap">Address</p>
                 </td>
                 <td class="px-5 pt-5 bg-white text-sm capitalize">
-                  <p class="text-gray-900 whitespace-no-wrap">7, PIPELINELAYOU, BESIDEREFINARY, EKPAN, DELTA
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    {{coy["Reg_Add"]}}
                   </p>
                 </td>
               </tr>
@@ -42,7 +87,7 @@
                   <p class="text-gray-900 whitespace-no-wrap">Status</p>
                 </td>
                 <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">Verified</p>
+                  <p class="text-gray-900 whitespace-no-wrap">{{coy["Status"]}}</p>
                 </td>
               </tr>
               <tr>
@@ -50,7 +95,7 @@
                   <p class="text-gray-900 whitespace-no-wrap">Type of Entity</p>
                 </td>
                 <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">Private Unlimited Company</p>
+                  <p class="text-gray-900 whitespace-no-wrap">{{coy["Entity_Type"]}}</p>
                 </td>
               </tr>
               <tr>
@@ -58,7 +103,7 @@
                   <p class="text-gray-900 whitespace-no-wrap">Registration Number</p>
                 </td>
                 <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">RC 805396</p>
+                  <p class="text-gray-900 whitespace-no-wrap">{{coy["Company RC Number"]}}</p>
                 </td>
               </tr>
               <tr>
@@ -66,7 +111,7 @@
                   <p class="text-gray-900 whitespace-no-wrap">Registration Date</p>
                 </td>
                 <td class="px-5 pt-5 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">05 Mar 2009</p>
+                  <p class="text-gray-900 whitespace-no-wrap">{{coy["Reg_Date"]}}</p>
                 </td>
               </tr>
             </tbody>
