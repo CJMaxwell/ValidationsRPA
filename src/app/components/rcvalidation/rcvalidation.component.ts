@@ -58,6 +58,8 @@ export class RcvalidationComponent implements OnInit {
 
     this.rcvalidationService.getRCValidation(payload).subscribe({
       next: (res) => {
+        // console.log(res, 'Here I am');
+
         //@ts-ignore
         if (res.code == "200") {
           //@ts-ignore
