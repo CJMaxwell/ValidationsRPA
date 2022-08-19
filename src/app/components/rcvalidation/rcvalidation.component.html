@@ -50,6 +50,8 @@
               <button *ngIf="loading" type="button" class="mx-auto border-0 shadow-none block my-4">
                 <div class="loader-sm"></div>
               </button>
+
+              <p *ngIf="errorMsg && !loading">{{errorMsg}}</p>
             </div>
           </section>
         </form>

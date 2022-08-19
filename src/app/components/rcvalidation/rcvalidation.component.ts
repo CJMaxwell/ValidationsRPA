@@ -14,6 +14,7 @@ export class RcvalidationComponent implements OnInit {
   coyName = '';
   accountNumber = '';
   isChecked = false;
+  errorMsg = '';
 
   loading = false;
   response: any;
@@ -82,6 +83,8 @@ export class RcvalidationComponent implements OnInit {
         }
         else {
           this.loading = false;
+          //@ts-ignore
+          this.errorMsg = res.shortDescription
         }
 
       }
